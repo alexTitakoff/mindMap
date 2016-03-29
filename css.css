@@ -12,7 +12,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
+	margin: 0; 
 	padding: 0;   
 	border: 0;  
 	font-size: 100%;
@@ -102,28 +102,31 @@ html {
 
 }
 
-
 .view_node {
-	width: 200px;
+	width: 260px;
 	background: #757575;
 	border-radius: 12px;
 	padding: 20px;
-	float: right;
+	display: inline-block;
 	vertical-align: top;
-
+	border-top: 5px solid #E4B011;
 }
+
 .view_node_name {
 	font-size: 16px;
-
+	color: #E4B011;
+	font-weight: bold;
 }
 
 .view_status  {
 	font-size: 12px;
+	display: none;
 }
-.view_date  {
-	font-size: 12px;
+.view_date {
+	font-size: 9px;
+	position: relative;
+	left: 89%;
 }
-
 
 .delete_node {
 	font-size: 12px;
@@ -136,4 +139,14 @@ html {
 
 .add_subnode {
 	cursor: pointer;
+}
+
+h2 {
+	font-size: 24px;
+
+}
+
+
+#view_map {
+	padding: 9px;
 }

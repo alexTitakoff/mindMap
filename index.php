@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
 
 	<link rel="stylesheet" href="css.css">
 	<meta charset="UTF-8">
@@ -10,7 +10,6 @@
 	<h2>Mind Map {proto}</h2>
 
 
-	Создать Раздел изучения 
 
 	<div id="modal_div">
 		
@@ -49,6 +48,9 @@
 
 
 	</div>
+	
+
+	
 
 	<div id="create_node">	CreateNode </div>
 
@@ -82,7 +84,7 @@
 			<ul class="view_node">
 				<p class="view_node_name" ><?php echo ($nodeData['name']);  ?></p>
 				<p class="view_status"><?php echo ($nodeData['status']);  ?></p>
-				<p class="view_date" >date</p>
+				<p class="view_date" ><?php echo ($nodeData['date']);  ?></p>
 				<p class="add_subnode">Add SubNode</p>
 				<p><?php echo ($nodeData['id']);  ?></p>
 				
@@ -117,38 +119,29 @@
 	</div>
 
 
+	<div style="font-size: 9px; position: fixed; bottom: 2%; right: 5%; background: #1F1F1F; width: 200px; padding: 10px; overflow-y: scroll; max-height: 120px; "  id="todo">
+		<p style="font-size: 12px;">Project ToDo:</p> <br>
+		<del>Перевести статус в цвет</del> <br>
+		-иконка удаления, добавления<br>
+		-редактирование нодов, обработчик<br>
+		<del>-Todo list </del>	<br>
+		-Cтатусы Li-шкам<br>
+		-Интерфейс для Li-шек<br>
+		lorem<br>
+		lorem<br>
+		lorem<br>
+		lorem<br>
+		lorem<br>
+		lorem<br>
+		lorem<br>
+	</div>
 
 
 
 
 
-	<script>
-
-		document.getElementById('create_node').onclick = function modal() {
-			document.getElementById('modal_div').style.display = 'block';
-		};	
 
 
-
-
-
-		var viewNode = document.getElementsByClassName('view_node');
-		console.log(viewNode);
-		for (var i=0; i<viewNode.length; i++) {
-			viewNode[i].childNodes[7].onclick = function() {
-				console.log(this);
-				document.getElementById('modal_div2').style.display = 'block';
-				var parentId = this.parentNode.childNodes[9].innerHTML;
-				document.getElementById('parent_id').value = parentId;
-
-
-			};
-		}
-
-
-
-
-
-	</script>
+	<script src="js.js"></script>
 </body>
 </html>
