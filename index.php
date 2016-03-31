@@ -5,6 +5,8 @@
 	<link rel="stylesheet" href="css.css">
 	<meta charset="UTF-8">
 	<title>js Mind Map</title>
+	
+
 </head>
 <body>
 	<h2>Mind Map {proto}</h2>
@@ -85,8 +87,8 @@
 				<p class="view_node_name" ><?php echo ($nodeData['name']);  ?></p>
 				<p class="view_status"><?php echo ($nodeData['status']);  ?></p>
 				<p class="view_date" ><?php echo ($nodeData['date']);  ?></p>
-				<p class="add_subnode">Add SubNode</p>
-				<p><?php echo ($nodeData['id']);  ?></p>
+				<p class="add_subnode">add <span>+</span> </p>
+				<p class="id_node" ><?php echo ($nodeData['id']);  ?></p>
 				
 
 				<?php 
@@ -95,21 +97,32 @@
 				// Выборка подкатегорий
 				$slctSubNode = "SELECT * FROM jsmap_db 
 				WHERE `parent_id` = '$parentId'
-				ORDER BY `id`;";
+				ORDER BY  `status` ASC ;";
 				$assoc_res2 = $dbh->query($slctSubNode);
 				while ( $subNodeData = $assoc_res2->fetch(PDO::FETCH_ASSOC)) {
 
 					?>
 
-					<li>
-						<?php  echo ($subNodeData['name']); ?>
+					<li class="subnode" >
+						<div class="li_circle" ></div>
+						<p class="subnode_status"><?php  echo ($subNodeData['status']); ?></p>
+
+						<p class="subnode_name" ><?php  echo ($subNodeData['name']); ?></p>
+
+						<div class="subnode_menu">
+							<p class="subnode_status_inner" >Status: <?php  echo ($subNodeData['status']); ?></p><br>
+							<?php  echo ($subNodeData['descr']); ?>	<br>
+							<a class="delete_subnode" href="delete.php?id=<?php  echo ($subNodeData['id']); ?>">Delete Node</a>
+						</div>
+
+						
 					</li>
 
 					<?php	
 				} // Выборка подкатегорий		?>
 
 				
-				<a class="delete_node" href="delete.php?id=<?php echo ($nodeData['id']);?>">Delete</a>
+				<a class="delete_node" href="delete.php?id=<?php echo ($nodeData['id']);?>"></a>
 
 
 			</ul>
@@ -119,23 +132,47 @@
 	</div>
 
 
-	<div style="font-size: 9px; position: fixed; bottom: 2%; right: 5%; background: #1F1F1F; width: 200px; padding: 10px; overflow-y: scroll; max-height: 120px; "  id="todo">
-		<p style="font-size: 12px;">Project ToDo:</p> <br>
-		<del>Перевести статус в цвет</del> <br>
-		-иконка удаления, добавления<br>
-		-редактирование нодов, обработчик<br>
-		<del>-Todo list </del>	<br>
-		-Cтатусы Li-шкам<br>
-		-Интерфейс для Li-шек<br>
-		lorem<br>
-		lorem<br>
-		lorem<br>
-		lorem<br>
-		lorem<br>
-		lorem<br>
-		lorem<br>
-	</div>
+	
 
+	<!-- To-DO -->
+	<div style="font-size: 11px; position: fixed; bottom: 2%; right: 5%; background: #1F1F1F; width: 200px; padding: 10px; overflow-y: scroll; max-height: 120px; "  id="todo">
+		<style >
+
+			.inproc {
+				color: #F6C63E;
+			}
+		</style>
+		<p style="font-size: 12px;">Project ToDo:</p> <br>
+		
+		<span class="inproc" >-Интерфейс для Li-шек<br>
+			-иконка удаления, добавления<br>
+			-разворачивание описания
+		</span><br>
+		<span>-Sublime ssh, подключение</span><br>
+		<span>-Редактировании в одноименном окне</span><br>
+		-Editing Subnode<br>
+		-Editing Node<br>
+		<span>-Редизайн окошек добавления
+			--закрытие
+			--лэблы
+			--селекты
+		</span><br>
+		<span>---Подумать над проблемов плавного появления и увеличения высоты</span><br>
+
+		
+		<del>Перевести статус в цвет</del> <br>		
+		<del>-Todo list </del>	<br>
+		<del>-Cтатусы Li-шкам</del><br>
+		<del>-кружочки Li-шкаv</del><br>
+
+		<del>-Фишка выборки, чтобы освоенное было сверху</del><br>
+		
+		<span>lorem</span><br>
+		<span>lorem</span><br>
+		<span>lorem</span><br>
+		
+	</div>
+	<!-- To-DO -->
 
 
 

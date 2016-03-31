@@ -54,8 +54,10 @@ html {
 	top: 0;
 	background: rgba(0,0,0,0.5);
 	display: none;
-
+	z-index: 999999;
 }
+
+
 
 
 #modal_div2 {
@@ -110,12 +112,22 @@ html {
 	display: inline-block;
 	vertical-align: top;
 	border-top: 5px solid #E4B011;
+	position: relative;
+	overflow-x: hidden;
+	transition: height 0.5s linear;
+}
+
+.id_node {
+	display: none;
 }
 
 .view_node_name {
 	font-size: 16px;
 	color: #E4B011;
 	font-weight: bold;
+}
+.view_node li {
+
 }
 
 .view_status  {
@@ -124,23 +136,51 @@ html {
 }
 .view_date {
 	font-size: 9px;
-	position: relative;
-	left: 89%;
+	position: absolute;
+	left: 82%;
 }
-
 .delete_node {
-	font-size: 12px;
-	color: #903131;
-	margin-top: 20px;
-	position: relative;
+
+	position: absolute;
 	display: block;
 	z-index: 0;
+	top: 3px;
+	right: 2%;
+	height: 14px;
+	background: url(img/trash1.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 14px;
+}
+
+.delete_node:hover {	
+	position: absolute;
+	display: block;
+	z-index: 0;
+	top: 3px;
+	right: 2%;
+	height: 14px;
+	background: url(img/trash2.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 14px;
 }
 
 .add_subnode {
 	cursor: pointer;
+	width: 70px;
 }
 
+.add_subnode:hover {
+	color: #70C363;
+}
+
+.add_subnode span {
+	font-size: 23px;
+	font-weight: bold;
+	position: relative;
+	top: 1px;
+}
 h2 {
 	font-size: 24px;
 
@@ -149,4 +189,67 @@ h2 {
 
 #view_map {
 	padding: 9px;
+}
+
+.subnode {
+	list-style: none;
+	position: relative;
+	right: -20px;
+	font-size: 14px;
+}
+.subnode .li_circle {
+	height: 6px;
+	width: 6px;
+	background: #FFFFFF;
+	border-radius: 50%;
+	display: inline-block;
+	position: relative;
+	top: -3px;
+}
+
+.subnode p {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.subnode_status {
+	position: absolute; 
+	left: -40px;
+	top: 0px;
+	display: none !important;
+}
+
+.subnode_menu {
+	position: absolute;
+
+	left: -7px;
+	
+
+	width: 198px;
+	height: auto;
+	background: #E5E5E5;
+	z-index: 9999;
+	border-radius: 6px;
+	color: #5D5D5D;
+	font-size: 12px;
+	padding: 15px;
+	display: none;
+	position: relative;
+	margin: 5px;
+}
+
+.subnode_name {
+	width: 93%;
+}
+
+.subnode_status_inner {
+	font-size: 10px;
+	margin-bottom: 5px;
+}
+
+
+.delete_subnode {
+	margin-top: 10px;
+	font-size: 10px;
+	color: #BA4C4C;
 }
