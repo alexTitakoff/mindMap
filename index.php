@@ -17,7 +17,7 @@
 	<div id="modal_div">
 		
 		<div id="params">
-
+			
 			<form action="create.php" method="post">
 
 				<input name="node_name" id="node_name" type="text"  >
@@ -45,8 +45,8 @@
 				<p>select a status of the process</p>
 				<select name="subnode_status"id="subnode_status">
 					
-					<option value="a_onlearn">onlearn</option>
-					<option value="b_inuse">inuse</option>
+					<option value="b_onlearn">onlearn</option>
+					<option value="a_inuse">inuse</option>
 					<option value="inplans">inplans</option>  
 
 				</select> <br><br>
