@@ -7,9 +7,10 @@
 	<title>js Mind Map</title>
 	
 
-</head>
+</head> 
 <body>
-	<h2>Mind Map {proto}</h2>
+	
+	<h2>Mind Map {proto} ver 0.4.0</h2>
 
 
 
@@ -32,14 +33,23 @@
 	<div id="modal_div2">
 
 
-		<div class="params_subnode">
+		<div id="params_subnode2">
 
 			<form action="addSubnode.php" method="post">
-
+				
+				<p>enter nodeName</p>
 				<input name="subnode_name" id="subnode_name" type="text"  >
-				<input  name="subnode_type" type="text" value="subnode">
-				<input  name="parentId" id="parent_id" type="text" >
-				<input name="subnode_status"id="subnode_status" type="text" >
+				<input  name="subnode_type" type="hidden" value="subnode">
+				
+				<input  name="parentId" id="parent_id" type="hidden" ><br>
+				<p>select a status of the process</p>
+				<select name="subnode_status"id="subnode_status">
+					
+					<option value="a_onlearn">onlearn</option>
+					<option value="b_inuse">inuse</option>
+					<option value="inplans">inplans</option>  
+
+				</select> <br><br>
 				<input name="subnode_create" type="submit" value="create">
 
 			</form>
@@ -144,22 +154,29 @@
 		</style>
 		<p style="font-size: 12px;">Project ToDo:</p> <br>
 		
-		<span class="inproc" >-Интерфейс для Li-шек<br>
-			-иконка удаления, добавления<br>
-			-разворачивание описания
-		</span><br>
-		<span>-Sublime ssh, подключение</span><br>
+		
+		
 		<span>-Редактировании в одноименном окне</span><br>
-		-Editing Subnode<br>
-		-Editing Node<br>
+		<span class="inproc">-Editing Subnode <br>
+
+			<del>___-добавить лейблы<br></del>
+			___-появление аинимашка<br>
+			<del>___-селект</del>
+
+		</span><br>
+		
 		<span>-Редизайн окошек добавления
 			--закрытие
 			--лэблы
 			--селекты
+			--input под описание
 		</span><br>
-		<span>---Подумать над проблемов плавного появления и увеличения высоты</span><br>
-
-		
+		<span>---Подумать над проблемой плавного появления и увеличения высоты</span><br>
+		<del>-Интерфейс для Li-шек<br>
+			-иконка удаления, добавления<br>
+			-разворачивание описания
+		</del><br>
+		<del>-Sublime ssh, подключение</del><br>
 		<del>Перевести статус в цвет</del> <br>		
 		<del>-Todo list </del>	<br>
 		<del>-Cтатусы Li-шкам</del><br>
@@ -167,9 +184,7 @@
 
 		<del>-Фишка выборки, чтобы освоенное было сверху</del><br>
 		
-		<span>lorem</span><br>
-		<span>lorem</span><br>
-		<span>lorem</span><br>
+		
 		
 	</div>
 	<!-- To-DO -->

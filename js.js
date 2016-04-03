@@ -34,6 +34,8 @@ for (var i=0; i<viewNode.length; i++) {
 	viewNode[i].childNodes[7].onclick = function() {
 		console.log(this);
 		document.getElementById('modal_div2').style.display = 'block';
+		document.getElementById('params_subnode2').classList.add('modal_left');	
+		document.getElementById('params_subnode2').classList.add('slideInLeft');	
 		var parentId = this.parentNode.childNodes[9].innerHTML;
 		document.getElementById('parent_id').value = parentId;
 	};
@@ -98,14 +100,16 @@ for (var j=0; j<subNode.length; j++) {
 
 	//Интерфейс обработка и появление
 
-
-
-
-
-
-
-
-
 }
 
 //Обрабодка статусов и просто компонентов для SUBNode
+
+
+
+
+
+
+// появляшка модалки
+
+
+// появляшка модалки

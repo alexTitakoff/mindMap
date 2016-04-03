@@ -35,7 +35,7 @@
 
 
 		$dbh = NULL;  //Закрыл соединение
-		header('Location: http://host2/index.php');
+		header('Location: http://examples.cs06028-wordpress.tw1.ru/mindmap/index.php');
 	}
 
 
